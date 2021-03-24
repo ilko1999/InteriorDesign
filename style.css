@@ -1,0 +1,84 @@
+body{
+    background-color: #181719;
+}
+
+:root{
+    --primary-color: white;
+}
+
+.formated-text1{
+    font-family: 'Crimson Pro', serif;
+    color: var(--primary-color);
+    font-style: normal;
+}
+
+.logo h1{
+    font-weight: 200;
+    font-size: 18px;
+    line-height: 16px;
+    text-transform: uppercase;
+    padding: 8px;
+    margin: 8px;
+    border: 1px solid var(--primary-color);
+}
+
+.logo{
+    width: 100%;
+    height: 50px;
+    display: flex;
+}
+
+.menu-btn{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 29px;
+    height: 21px;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+}
+
+.menu-btn-burger{
+    width: 25px;
+    height: 2px;
+    background: var(--primary-color);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
+    transition: all .5s ease-in-out;
+}
+
+.menu-btn-burger::before,
+.menu-btn-burger::after{
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 2px;
+    background: var(--primary-color);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
+    transition: all .5s ease-in-out;
+}
+
+.menu-btn-burger::before{
+    transform: translateY(-7px);
+}
+.menu-btn-burger::after{
+    transform: translateY(7px);
+}
+
+/* animation */
+
+.menu-btn.open .menu-btn-burger{
+    transform: translateX(-25px);
+    background: transparent;
+    box-shadow: none;
+}
+
+.menu-btn.open .menu-btn-burger::before{
+    transform: rotate(45deg) translate(20px, -20px);
+}
+
+.menu-btn.open .menu-btn-burger::after{
+    transform: rotate(-45deg) translate(20px, 20px);
+}
